@@ -1,3 +1,36 @@
+{% include 'partials/header.twig' %}
+
+HOME.TWIG
+
+<html>
+<head>
+	<title>App Name - {% block title %}Название сайта - {% endblock %}</title>
+</head>
+<body>
+{% block sidebar %}
+	This is the master sidebar.
+{% endblock %}
+
+<div class="container">
+	{% block content %}Блок "CONTENT"{% endblock %}
+</div>
+</body>
+</html>
+
+
+{% include 'partials/footer.twig' %}
+
+
+{#{% include 'partials/header.twig' %} - при extends нельзя использовать#}
+{#{% extends "layouts/app.blade.php" %}
+
+{% block mainContent %}
+	{{ parent() }}
+	Some page text
+{% endblock %}#}
+
+
+{#
 @extends('layouts.app')
 
 @section('content')
@@ -21,3 +54,4 @@
     </div>
 </div>
 @endsection
+#}

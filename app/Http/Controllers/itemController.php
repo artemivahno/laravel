@@ -9,6 +9,6 @@ class itemController extends Controller
 	public function index()
 	{
 		echo index;
-	       return view('post.index');
+	       return view('product');
 	}
 }
