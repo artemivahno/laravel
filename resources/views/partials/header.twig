@@ -1,4 +1,6 @@
 HEADER.TWIG
+
+
 <header>
 
 	<div class="header-left"><a href="/">Логотип</a></div>
@@ -8,29 +10,46 @@ HEADER.TWIG
 			<li><a href="#">Блог</a></li>
 		</ul>
 	</div>
-	<div class="header-right"><button>Купить</button></div>
+	<div class="header-right">
+		<button>Корзина</button>
+	</div>
+
+	{#Fonts#}
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+
+	{#Styles#}
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	{#Latest compiled and minified CSS#}
+	<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+	{#Optional theme#}
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+
+	{% if auth_guest() %}
+		stuff for non-authenticated users
+	{% endif %}
+
 </header>
 
-{#{% extends '../layouts/app.blade.php' %}#}
-
-
-
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+	<div class="row justify-content-center">
+		<div class="col-md-8">
+			<div class="card">
+				<div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+				<div class="card-body">
+					@if (session('status'))
+					<div class="alert alert-success" role="alert">
+						{{ session('status') }}
+					</div>
+					@endif
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+					You are logged in!
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
