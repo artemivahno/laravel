@@ -1,6 +1,12 @@
 <?php
 
 return [
+	/**
+	 * {@inheritDoc}
+	 */
+	new Twig_SimpleFunction('auth_check', [$this->auth, 'check']),
+	        new Twig_SimpleFunction('auth_guest', [$this->auth, 'guest']),
+	        new Twig_SimpleFunction('auth_user', [$this->auth, 'user']),
 
     /*
     |--------------------------------------------------------------------------
@@ -99,4 +105,6 @@ return [
         ],
     ],
 
+
 ];
+

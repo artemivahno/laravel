@@ -2,17 +2,10 @@ HEADER.TWIG
 
 
 <header>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<div class="header-left"><a href="/">Логотип</a></div>
-	<div class="header-center">
-		<ul>
-			<li><a href="#">Категории</a></li>
-			<li><a href="#">Блог</a></li>
-		</ul>
-	</div>
-	<div class="header-right">
-		<button>Корзина</button>
-	</div>
+	<title>{% block title %}Инструмент - сайт{% endblock %}</title>
 
 	{#Fonts#}
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,6 +24,20 @@ HEADER.TWIG
 	{% if auth_guest() %}
 		stuff for non-authenticated users
 	{% endif %}
+
+
+
+
+	<div class="header-left"><a href="/">Логотип</a></div>
+	<div class="header-center">
+		<ul>
+			<li><a href="#">Категории</a></li>
+			<li><a href="#">Блог</a></li>
+		</ul>
+	</div>
+	<div class="header-right">
+		<button>Корзина</button>
+	</div>
 
 </header>
 
