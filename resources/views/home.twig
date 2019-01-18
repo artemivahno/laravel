@@ -4,21 +4,18 @@
 HOME.TWIG
 
 <html>
-<head>
-	<title>{% block title %}Инструмент - сайт{% endblock %}</title>
-
-
-</head>
 <body>
 {% include 'partials/header.twig' %}
 
-{% block sidebar %}
+{#{% block sidebar %}
 
 	Блок SIDEBAR
 
 	This is the master sidebar.
-{% endblock %}
+{% endblock %}#}
+{% if auth_user() %}
 
+					You are logged in!
 <div class="container">
 	{% block content %}
 		Блок "CONTENT MAIN PAGE"
@@ -30,6 +27,8 @@ HOME.TWIG
 
 	{% endblock %}
 </div>
+
+{% endif %}
 </body>
 </html>
 
